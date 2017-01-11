@@ -90,6 +90,158 @@
             </RadioGroup>
         </LinearLayout>
 
+        <!-- Quiz two -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quiz 2: Which are Android versions?"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"/>
+
+            <CheckBox
+                android:id="@+id/ginger_bread_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:paddingTop="5dp"
+                android:text="Gingerbread"/>
+
+            <CheckBox
+                android:id="@+id/lollipop_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:paddingTop="5dp"
+                android:text="Lollipop"/>
+
+            <CheckBox
+                android:id="@+id/nougat_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:paddingTop="5dp"
+                android:text="Nougat"/>
+
+            <CheckBox
+                android:id="@+id/muffin_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:paddingTop="5dp"
+                android:text="Muffin"/>
+
+        </LinearLayout>
+
+        <!-- Quiz three -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quiz 3: Types of Intent in Android."
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"/>
+
+            <CheckBox
+                android:id="@+id/internal_intent_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:paddingTop="5dp"
+                android:text="Internal"/>
+
+            <CheckBox
+                android:id="@+id/implicit_intent_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:paddingTop="5dp"
+                android:text="Implicit"/>
+
+            <CheckBox
+                android:id="@+id/explicit_intent_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:paddingTop="5dp"
+                android:text="Explicit"/>
+
+            <CheckBox
+                android:id="@+id/external_intent_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:paddingTop="5dp"
+                android:text="External"/>
+
+        </LinearLayout>
+
+        <!-- Quiz four -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quiz 4: What does the .apk extension stand for?"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:paddingTop="5dp"
+                android:hint="Enter the answer here.."
+                />
+
+        </LinearLayout>
+
+        <!-- Quiz five -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quiz 5: In an explicit intent, the sender specifies the type of receiver."
+                android:paddingLeft="20dp"
+                android:paddingRight="5dp"
+                android:paddingTop="20dp"/>
+
+            <RadioGroup
+                android:id="@+id/quiz_five_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="25dp"
+                android:paddingTop="5dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="True"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="False"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/submit_button"
             android:layout_width="wrap_content"

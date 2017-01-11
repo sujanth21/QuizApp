@@ -11,13 +11,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int totalNumberOfQuizes = 10;
+    int totalNumberOfQuizzes = 10;
     int totalCorrectAnswers = 0;
 
     private RadioGroup quizOneRadioGroup;
     private RadioButton quizOneRadioButton;
 
-    //Answers for quizes
+    //Answers for quizzes
     String correctAnswerForQuizOne = "Java";
 
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayAnswersForAllQuizes() {
         TextView displayAnswers = (TextView) findViewById(R.id.display_answer_text_view);
-        displayAnswers.setText("Answers: \nQuiz 1: " + correctAnswerForQuizOne + "\nTotal Correct Answer: " + totalCorrectAnswers +"/"+ totalNumberOfQuizes);
+        displayAnswers.setText("Answers: \nQuiz 1: " + correctAnswerForQuizOne + "\nTotal Correct Answer: " + totalCorrectAnswers +"/"+ totalNumberOfQuizzes);
     }
 
 }
