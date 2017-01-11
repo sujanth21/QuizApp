@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String answerOne = selectedAnswerForQuizOne();
                 String checkResultForQuizOne = checkAnswer();
-                Toast.makeText(MainActivity.this, "Selected Answer: " + answerOne + "\nCorrect Answer: " + correctAnswerForQuizOne + "\n" + checkResultForQuizOne, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Selected Answer: " + answerOne + "\nCorrect Answer: " + correctAnswerForQuizOne + "\n" + checkResultForQuizOne +"\nTotal Correct Answers: " + totalCorrectAnswers, Toast.LENGTH_LONG).show();
                 displayAnswersForAllQuizes();
             }
         });
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         String selectedAnswerForQuizOne = selectedAnswerForQuizOne();
 
         if (selectedAnswerForQuizOne.equalsIgnoreCase(correctAnswerForQuizOne)) {
+            totalCorrectAnswers = totalCorrectAnswers + 1;
             return "You are right!";
         } else {
             return "You are wrong!";
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayAnswersForAllQuizes() {
         TextView displayAnswers = (TextView) findViewById(R.id.display_answer_text_view);
-        displayAnswers.setText("Answers: \nQuiz 1: " + correctAnswerForQuizOne);
+        displayAnswers.setText("Answers: \nQuiz 1: " + correctAnswerForQuizOne + "\nTotal Correct Answer: " + totalCorrectAnswers +"/"+ totalNumberOfQuizes);
     }
 
 }
