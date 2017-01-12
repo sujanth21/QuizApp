@@ -16,11 +16,6 @@ public class MainActivity extends AppCompatActivity {
     int totalNumberOfQuizzes = 5;
     int totalCorrectAnswers = 0;
 
-    private RadioGroup quizOneRadioGroup;
-    private RadioGroup quizFiveRadioGroup;
-    private RadioButton quizOneRadioButton;
-    private RadioButton quizFiveRadioButton;
-
     //Answers for quizzes
     String correctAnswerForQuizOne = "Java";
     String correctAnswerForQuizTwo = "Gingerbread, Lollipop and Nougat";
@@ -28,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     String correctAnswerForQuizFour = "Application Package";
     String correctAnswerForQuizFive = "False";
 
+    private RadioGroup quizOneRadioGroup;
+    private RadioGroup quizFiveRadioGroup;
+    private RadioButton quizOneRadioButton;
+    private RadioButton quizFiveRadioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 return "You are wrong!";
             }
-        }else {
+        } else {
             return "No answer selected for quiz one!";
         }
     }
@@ -122,14 +121,14 @@ public class MainActivity extends AppCompatActivity {
 
     private String checkAnswerForQuizFive() {
         quizFiveRadioGroup = (RadioGroup) findViewById(R.id.quiz_five_radio_group);
-        int selectedAnswerForQuizFive  = quizFiveRadioGroup.getCheckedRadioButtonId();
+        int selectedAnswerForQuizFive = quizFiveRadioGroup.getCheckedRadioButtonId();
 
         quizFiveRadioButton = (RadioButton) findViewById(selectedAnswerForQuizFive);
 
         if (quizFiveRadioButton != null) {
             String answerForQuizFive = quizFiveRadioButton.getText().toString();
 
-            if (answerForQuizFive.equalsIgnoreCase(correctAnswerForQuizFive)){
+            if (answerForQuizFive.equalsIgnoreCase(correctAnswerForQuizFive)) {
                 totalCorrectAnswers = totalCorrectAnswers + 1;
                 return "Amazing answer, You can continue to code!";
             } else {
@@ -153,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 "\nQuiz 3: " + correctAnswerForQuizThree +
                 "\nQuiz 4: " + correctAnswerForQuizFour +
                 "\nQuiz 5: " + correctAnswerForQuizFive +
-                "\n\nTotal Correct Answer: " + totalCorrectAnswers +"/"+ totalNumberOfQuizzes);
+                "\n\nTotal Correct Answer: " + totalCorrectAnswers + "/" + totalNumberOfQuizzes);
     }
 
 }
