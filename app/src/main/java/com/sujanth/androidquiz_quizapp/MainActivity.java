@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Answers for quizzes
     String correctAnswerForQuizOne = "Java";
+    String correctAnswerForQuizTwo = "Gingerbread, Lollipop and Nougat";
 
 
     @Override
@@ -31,28 +33,47 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String answerOne = selectedAnswerForQuizOne();
-                String checkResultForQuizOne = checkAnswer();
-                Toast.makeText(MainActivity.this, "Selected Answer: " + answerOne + "\nCorrect Answer: " + correctAnswerForQuizOne + "\n" + checkResultForQuizOne +"\nTotal Correct Answers: " + totalCorrectAnswers, Toast.LENGTH_LONG).show();
+                String checkResultForQuizOne = checkAnswerForQuizOne();
+                String checkResultForQuizTwo = checkAnswerForQuizTwo();
+
+                Toast.makeText(MainActivity.this, "Correct Answer For Quiz 1: " + correctAnswerForQuizOne + "\n" + checkResultForQuizOne +
+                        "\n\nCorrect Answer For Quiz 2: " + correctAnswerForQuizTwo + "\n" + checkResultForQuizTwo +
+                        "\nTotal Correct Answers: " + totalCorrectAnswers, Toast.LENGTH_LONG).show();
                 displayAnswersForAllQuizes();
+                totalCorrectAnswers = 0;
             }
         });
     }
 
 
 
-    private String selectedAnswerForQuizOne() {
-        quizOneRadioGroup = (RadioGroup) findViewById(R.id.quiz_one_radio_group);
-        int selectedAnswerForQuizOne = quizOneRadioGroup.getCheckedRadioButtonId();
-        quizOneRadioButton = (RadioButton) findViewById(selectedAnswerForQuizOne);
-        String answer = quizOneRadioButton.getText().toString();
-        return answer;
+
+    //Selected answer for quiz two
+    private String checkAnswerForQuizTwo() {
+        CheckBox checkBoxForGingerBread = (CheckBox) findViewById(R.id.ginger_bread_check_box);
+        CheckBox checkBoxForLollipop = (CheckBox) findViewById(R.id.lollipop_check_box);
+        CheckBox checkBoxForNougat = (CheckBox) findViewById(R.id.nougat_check_box);
+        CheckBox checkBoxForMuffin = (CheckBox) findViewById(R.id.muffin_check_box);
+
+        if (checkBoxForGingerBread.isChecked() && checkBoxForLollipop.isChecked() && checkBoxForNougat.isChecked() && !checkBoxForMuffin.isChecked()) {
+            totalCorrectAnswers = totalCorrectAnswers + 1;
+            return "Awesome work, all options are right!";
+        } else {
+            return "Hey, You have to Google it to get right answer for this question.";
+        }
+
+
+
     }
 
-    private String checkAnswer() {
-        String selectedAnswerForQuizOne = selectedAnswerForQuizOne();
+    private String checkAnswerForQuizOne() {
+        quizOneRadioGroup = (RadioGroup) findViewById(R.id.quiz_one_radio_group);
+        int selectedAnswerForQuizOne = quizOneRadioGroup.getCheckedRadioButtonId();
 
-        if (selectedAnswerForQuizOne.equalsIgnoreCase(correctAnswerForQuizOne)) {
+        quizOneRadioButton = (RadioButton) findViewById(selectedAnswerForQuizOne);
+        String answer = quizOneRadioButton.getText().toString();
+
+        if (answer.equalsIgnoreCase(correctAnswerForQuizOne)) {
             totalCorrectAnswers = totalCorrectAnswers + 1;
             return "You are right!";
         } else {
@@ -62,7 +83,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayAnswersForAllQuizes() {
         TextView displayAnswers = (TextView) findViewById(R.id.display_answer_text_view);
-        displayAnswers.setText("Answers: \nQuiz 1: " + correctAnswerForQuizOne + "\nTotal Correct Answer: " + totalCorrectAnswers +"/"+ totalNumberOfQuizzes);
+        displayAnswers.setText("Answers: \nQuiz 1: " + correctAnswerForQuizOne +
+                "\nQuiz 2: " + correctAnswerForQuizTwo +
+                "\n\nTotal Correct Answer: " + totalCorrectAnswers +"/"+ totalNumberOfQuizzes);
     }
 
 }
