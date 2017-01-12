@@ -33,6 +33,7 @@
                 android:textAppearance="?android:textAppearanceMedium"
                 android:layout_margin="5dp"/>
             <EditText
+                android:id="@+id/user_name_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
@@ -198,6 +199,7 @@
                 android:paddingTop="20dp"/>
 
             <EditText
+                android:id="@+id/quiz_four_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
